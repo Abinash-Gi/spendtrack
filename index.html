@@ -493,7 +493,7 @@ function toggleTheme(){
 // ---- VIEWS ----
 function showDashboard(){
   ui.view='dashboard';
-  document.getElementById('dashboard-view').style.display='';
+  document.getElementById('dashboard-view').style.display='block';
   document.getElementById('category-view').style.display='none';
   document.getElementById('summary-view').style.display='none';
   document.getElementById('nav-dashboard').classList.add('active');
@@ -504,7 +504,7 @@ function showSummary(){
   ui.view='summary';
   document.getElementById('dashboard-view').style.display='none';
   document.getElementById('category-view').style.display='none';
-  document.getElementById('summary-view').style.display='';
+  document.getElementById('summary-view').style.display='block';
   document.getElementById('nav-dashboard').classList.remove('active');
   document.getElementById('nav-summary').classList.add('active');
   renderSummary();
@@ -513,7 +513,7 @@ function openCategory(id){
   ui.selectedCatId=id;
   ui.view='category';
   document.getElementById('dashboard-view').style.display='none';
-  document.getElementById('category-view').style.display='';
+  document.getElementById('category-view').style.display='block';
   document.getElementById('summary-view').style.display='none';
   renderCategoryDetail();
 }
@@ -582,7 +582,7 @@ function renderDonut(cats,mk){
   const canvas=document.getElementById('donut-chart');
   const noData=document.getElementById('no-data-msg');
   if(!data.length){canvas.style.display='none';noData.style.display='flex';return;}
-  canvas.style.display='';noData.style.display='none';
+  canvas.style.display='block';noData.style.display='none';
   if(donutChart){donutChart.destroy();donutChart=null;}
   const isDark=appData.settings.theme==='dark';
   const textColor=isDark?'#fff':'#1C1C1E';
